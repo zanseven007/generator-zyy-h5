@@ -1,2 +1,23 @@
-### 我的H5模板生成器
-使用Webpack打包
+# 基于Webpack的H5小项目生成器
+> H5 日益普及，为了方便日后开发的方便，特此写一个模板生成器为日后使用
+
+## 使用
+安装 yo
+```
+npm install -g yo
+```
+新建一个项目目录并进入
+```
+mkdir my-new-h5 && cd $_
+```
+安装赞鱼鱼的H5模板生成器
+```
+npm install -g generator-zyy-h5 
+```
+使用赞鱼鱼的H5模板
+```
+yo zyy-h5
+```
+
+## License
+MIT © [zanseven007](https://github.com/zanseven007)
