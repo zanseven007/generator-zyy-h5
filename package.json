@@ -1,6 +1,6 @@
 {
   "name": "generator-zyy-h5",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "基于Webpack的H5项目目录快速生成器",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,11 @@
     "H5",
     "Webpack"
   ],
-  "author": "赞鱼鱼",
+  "author": {
+    "name": "zanseven007",
+    "email": "445897574@qq.com",
+    "url": "http://www.zanyuyu.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zanseven007/generator-zyy-h5/issues"
