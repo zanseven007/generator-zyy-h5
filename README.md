@@ -10,11 +10,11 @@ npm install -g yo
 ```
 mkdir my-new-h5 && cd $_
 ```
-安装赞鱼鱼的H5模板生成器
+安装H5模板生成器
 ```
 npm install -g generator-zyy-h5 
 ```
-使用赞鱼鱼的H5模板
+使用H5模板
 ```
 yo zyy-h5
 ```
