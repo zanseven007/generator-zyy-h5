@@ -9,7 +9,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 module.exports = {
     devtool: 'source-map',
 
-    entry: './src/**/*.js',
+    entry: './src/js/script.js',
 
     output: {
         path: BUILD_PATH,
@@ -48,7 +48,7 @@ module.exports = {
             compress: {
                 warnings: false
             }
-        })
+        }),
     ],
 
     postcss: [

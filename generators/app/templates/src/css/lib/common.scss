@@ -1,0 +1,35 @@
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+img {
+    /**
+     * 防止页面上的图片溢出。
+     * 注意，在 IE8 中如果 <img> 的父级元素加了 float，并且没有给 <img>
+     * 设置宽度的话，会出现图片不显示的 bug，解决方法是给这些图片设置
+     * 宽度或者设置 `max-width: none` 来覆盖 `max-width: 100%`
+    */
+    max-width: 100%;
+}
+/**
+ * .clearfix
+ * @see http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+
+.clearfix{
+	zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after{
+	content: ' ';
+	display: table;
+}
+
+.clearfix:after{
+	clear: both;
+}
