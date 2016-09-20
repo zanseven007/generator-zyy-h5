@@ -6,20 +6,20 @@
 ```
 npm install -g yo
 ```
-新建一个项目目录并进入
-```
-mkdir my-new-h5 && cd $_
-```
 安装H5模板生成器
 ```
 npm install -g generator-zyy-h5 
+```
+新建一个项目目录并进入
+```
+mkdir my-new-h5 && cd $_
 ```
 使用H5模板
 ```
 yo zyy-h5
 ```
 
-## 使用yoeman创建模板
+## 使用模板
 开发
 ```
 gulp watch
