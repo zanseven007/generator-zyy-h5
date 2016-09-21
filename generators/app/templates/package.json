@@ -4,8 +4,8 @@
   "description": "Wow, such a lovely package",
   "main": "dist/main.min.js",
   "scripts": {
-    "test": "webpack",
-    "start": "webpack-dev-server --hot --progress --inline --host 0.0.0.0"
+    "dev": "gulp dev",
+    "dist": "gulp dist"
   },
   "author": "Zou Chuan",
   "devDependencies": {

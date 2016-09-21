@@ -22,12 +22,12 @@ yo zyy-h5
 ## 使用模板
 开发
 ```
-gulp watch
+gulp dev
 ```
 
 发布
 ```
-gulp release
+gulp dist
 ```
 
 ## License

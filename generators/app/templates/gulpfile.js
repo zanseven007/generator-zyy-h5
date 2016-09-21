@@ -45,7 +45,7 @@ gulp.task('compressCSS', function() {
 });
 
 // Watch files for changes & recompile
-gulp.task('watch', function () {
+gulp.task('dev', function () {
     gulp.watch(['src/js/*.js'], ['webpack']);
     gulp.watch(['src/css/*.scss'], ['compressCSS']);
     gulp.watch('*.html').on('change', browserSync.reload);
@@ -53,7 +53,7 @@ gulp.task('watch', function () {
 });
 
 // compile the project, including move font, compress js and scss, also be used to test
-gulp.task('release', ['webpack', 'compressCSS']);
+gulp.task('dist', ['webpack', 'compressCSS']);
 
 // Default task, running just `gulp` will move font, compress js and scss, launch server, watch files.
-gulp.task('default', ['release', 'browser-sync', 'watch']);
+gulp.task('default', ['dist', 'browser-sync', 'dev']);
