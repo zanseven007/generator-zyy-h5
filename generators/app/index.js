@@ -17,6 +17,7 @@ var Reactpackage = yeoman.Base.extend({
         this.copy('index.html', 'index.html');
         this.copy('README.md', 'README.md');
         this.copy('webpack.config.js', 'webpack.config.js');
+        this.copy('gulpfile.js', 'gulpfile.js');
     },
     generateClient: function() {
         this.sourceRoot(path.join(__dirname, 'templates'));
