@@ -43,7 +43,7 @@ gulp dev
 
 ```
 
-发布
+发布(会压缩css和js，并增加md5)
 
 ```
 gulp dist

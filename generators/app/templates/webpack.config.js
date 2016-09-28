@@ -53,7 +53,7 @@ module.exports = {
         }
     },
     plugins: [
-        new CommonsChunkPlugin('common.js'),
+        new CommonsChunkPlugin('common','common.js',Infinity),
         new uglifyJsPlugin({
             compress: {
                 warnings: false
