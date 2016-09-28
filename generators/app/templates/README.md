@@ -12,7 +12,7 @@
 
 ### ISSUE
 
-因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以我们通过淘宝镜像去下载这个文件。
+**node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以我们通过淘宝镜像去下载这个文件。
 
 直接运行下面的命令即可
 
