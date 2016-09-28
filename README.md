@@ -11,28 +11,21 @@
 
 ```
 npm install -g yo
-
 ```
 安装H5模板生成器
 
 ```
-
 npm install -g generator-zyy-h5
-
 ```
 新建一个项目目录并进入
 
 ```
-
 mkdir my-new-h5 && cd $_
-
 ```
 使用H5模板
 
 ```
-
 yo zyy-h5
-
 ```
 
 ## 使用模板
@@ -40,14 +33,10 @@ yo zyy-h5
 
 ```
 gulp dev
-
 ```
-
 发布(会压缩css和js，并增加md5)
-
 ```
 gulp dist
-
 ```
 
 ## ISSUE
@@ -57,9 +46,7 @@ gulp dist
 直接运行下面的命令即可
 
 ```
-
 SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass
-
 ```
 
 ## License
