@@ -1,6 +1,6 @@
 /**
  Gulpfile for gulp-webpack-demo
- created by fwon
+ created by zyy
 */
 
 var gulp = require('gulp'),

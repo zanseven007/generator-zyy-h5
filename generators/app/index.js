@@ -14,7 +14,6 @@ var Reactpackage = yeoman.Base.extend({
         this.directory('src', 'src');    //拷贝目录
         this.directory('dist', 'dist');
         this.copy('package.json', 'package.json');   //拷贝文件
-        this.copy('index.html', 'index.html');
         this.copy('README.md', 'README.md');
         this.copy('webpack.config.js', 'webpack.config.js');
         this.copy('gulpfile.js', 'gulpfile.js');
