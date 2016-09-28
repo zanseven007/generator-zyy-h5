@@ -1,59 +1,63 @@
-var webpack = require('webpack');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var path = require('path');
-var autoprefixer = require('autoprefixer');
+var webpack = require('webpack');
+var fs = require('fs');
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'src');
-var BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
+var srcDir = path.resolve(process.cwd(), 'src');
+
+//获取多页面的每个入口文件，用于配置中的entry
+function getEntry() {
+    var jsPath = path.resolve(srcDir, 'js');
+    var dirs = fs.readdirSync(jsPath);
+    var matchs = [], files = {};
+    dirs.forEach(function (item) {
+        matchs = item.match(/(.+)\.js$/);
+        console.log(matchs);
+        if (matchs) {
+            files[matchs[1]] = path.resolve(srcDir, 'js', item);
+        }
+    });
+    console.log(JSON.stringify(files));
+    return files;
+}
 
 module.exports = {
-    devtool: 'source-map',
-
-    entry: './src/js/script.js',
-
+    cache: true,
+    devtool: "source-map",
+    entry: getEntry(),
     output: {
-        path: BUILD_PATH,
-        filename: 'main.min.js'
+        path: path.join(__dirname, "dist/js/"),
+        publicPath: "dist/js/",
+        filename: "[name].js",
+        chunkFilename: "[chunkhash].js"
     },
-
-    devServer: {
-        publicPath: "/dist/"
-    },
-
     module: {
         // noParse: /node_modules\/hls.js\/dist\/hls.js/,
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'babel',
-                include: APP_PATH,
+                include: path.join(__dirname, "src/js/"),
                 query: {
                     presets: ['es2015']
                 }
-            },
-            {
-                test: /\.(css|scss)$/,
-                loaders: ['style', 'css', 'postcss', 'sass'],
-                include: APP_PATH
-            },
-            {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192'
             }
         ]
+    },        
+    resolve: {
+        alias: {
+            jquery: srcDir + "/js/lib/jquery.min.js",
+            core: srcDir + "/js/core",
+            ui: srcDir + "/js/ui"
+        }
     },
-
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
+        new CommonsChunkPlugin('common.js'),
+        new uglifyJsPlugin({
             compress: {
                 warnings: false
             }
-        }),
-    ],
-
-    postcss: [
-        autoprefixer({
-            browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7']
         })
     ]
 };
