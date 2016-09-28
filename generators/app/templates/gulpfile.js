@@ -8,6 +8,9 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
     gulpOpen = require('gulp-open'),
+    sass = require('gulp-sass');
+    prefix = require('gulp-autoprefixer');
+    cssNano = require('gulp-cssnano');
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     md5 = require('gulp-md5-plus'),
@@ -18,11 +21,7 @@ var gulp = require('gulp'),
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js'),
     connect = require('gulp-connect');
-    sass = require('gulp-sass');
-    prefix = require('gulp-autoprefixer');
-    cssNano = require('gulp-cssnano');
-    rename = require('gulp-rename');
-
+    
 var host = {
     path: 'dist/',
     port: 3000,
