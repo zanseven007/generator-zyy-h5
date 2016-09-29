@@ -1,49 +1,48 @@
-# 基于Webpack和Gulp的H5小项目生成器
+# H5 Small Project Generator Based on Webpack and Gulp
 
-> - H5 日益普及，为了方便日后开发的方便，特此写一个模板生成器为日后使用
-> - 在HTML中支持使用 @@include 引入一个 .inc 文件
-> - 在CSS文件中可以使用 scss 进行开发
-> - 在JS当中利用webpack合并了公共模块，可以有任意个入口文件
-> - 开发时可自动启动 Chrome 浏览器，并且打开本地3000端口来调试
+> - H5 is increasingly popular, in order to facilitate the development of future convenience, hereby write a template generator for future use
+> - The use of @@ include in HTML supports the introduction of an .inc file
+> - In the CSS file can be used to scss
+> - Js in the use of webpack merge the public module, you can have any entry file
+> - Development can automatically start the Chrome browser, and open the local 3000 port to debug
 
-## 使用yoeman创建模板
-安装 yo
+## USAGE
+install yo
 
 ```
 npm install -g yo
 ```
-安装H5模板生成器
+install H5 template
 
 ```
 npm install -g generator-zyy-h5
 ```
-新建一个项目目录并进入
+Create a new project directory and enter
 
 ```
 mkdir my-new-h5 && cd $_
 ```
-使用H5模板
+Use the H5 template
 
 ```
 yo zyy-h5
 ```
 
-## 使用模板
-开发
+Development
 
 ```
 gulp dev
 ```
-发布(会压缩css和js，并增加md5)
+Release (will compress the css and js, and increase md5)
 ```
 gulp dist
 ```
 
 ## ISSUE
 
-**node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以我们通过淘宝镜像去下载这个文件。
+** node-sass installation failed Solution **: because the installation of `` node-sass` when it github Releases are hosted in the file `s3.amazonaws.com` above, and this site is always in the country network is not Stable, so we Taobao mirror to download this file.
 
-直接运行下面的命令即可
+Directly run the following command
 
 ```
 SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass

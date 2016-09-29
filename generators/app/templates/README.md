@@ -1,23 +1,32 @@
+# H5 Small Project Generator Based on Webpack and Gulp
 
-由于最近H5做的比较多，所以还是整理了一下手上项目，综合了一下，做了一个H5脚手架来告别复制粘贴, 可能还需要根据项目情况做调整。
+> - H5 is increasingly popular, in order to facilitate the development of future convenience, hereby write a template generator for future use
+> - The use of @@ include in HTML supports the introduction of an .inc file
+> - In the CSS file can be used to scss
+> - Js in the use of webpack merge the public module, you can have any entry file
+> - Development can automatically start the Chrome browser, and open the local 3000 port to debug
 
-安装依赖包：
-`npm install`
+## USAGE
 
-开发：
-`gulp dev`
-
-发布：
-`gulp dist`
-
-### ISSUE
-
-**node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以我们通过淘宝镜像去下载这个文件。
-
-直接运行下面的命令即可
+Development
 
 ```
+gulp dev
+```
+Release (will compress the css and js, and increase md5)
+```
+gulp dist
+```
 
+## ISSUE
+
+** node-sass installation failed Solution **: because the installation of `` node-sass` when it github Releases are hosted in the file `s3.amazonaws.com` above, and this site is always in the country network is not Stable, so we Taobao mirror to download this file.
+
+Directly run the following command
+
+```
 SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass
-
 ```
+
+## License
+MIT © [zanseven007](https://github.com/zanseven007)
