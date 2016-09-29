@@ -46,7 +46,7 @@ gulp dist
 直接运行下面的命令即可
 
 ```
-SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass
+SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass  && npm install gulp-sass
 ```
 
 ## License

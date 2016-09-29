@@ -10,7 +10,6 @@ var gulp = require('gulp'),
     gulpOpen = require('gulp-open'),
     sass = require('gulp-sass');
     prefix = require('gulp-autoprefixer');
-    cssNano = require('gulp-cssnano');
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     md5 = require('gulp-md5-plus'),
