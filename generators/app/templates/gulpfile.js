@@ -20,6 +20,7 @@ var gulp = require('gulp'),
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js'),
     connect = require('gulp-connect');
+    sourcemaps = require('gulp-sourcemaps');
     
 var host = {
     path: 'dist/',
@@ -41,9 +42,11 @@ gulp.task('copy:images', function (done) {
 //压缩合并css, css中既有自己写的.less, 也有引入第三方库的.css
 gulp.task('scssmin', function (done) {
     gulp.src(['src/css/*.scss', 'src/css/*.css'])
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(concat('style.min.css'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/css/'))
         .on('end', done);
 });
