@@ -47,7 +47,9 @@ gulp.task('scssmin', function (done) {
         .pipe(concat('style.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/css/'))
-        .on('end', done);
+        .on('end', done)
+        .pipe(connect.reload());
+
 });
 
 //将js加上10位md5,并修改html中的引用路径，该动作依赖build-js
@@ -74,8 +76,9 @@ gulp.task('fileinclude', function (done) {
           basepath: '@file'
         }))
         .pipe(gulp.dest('dist/app'))
-        .on('end', done);
-        // .pipe(connect.reload())
+        .on('end', done)
+        .pipe(connect.reload());
+
 });
 
 //压缩css操作，应该先拷贝图片并压缩合并css
@@ -98,7 +101,7 @@ gulp.task('clean:js', function (done) {
         .on('end', done);
 });
 gulp.task('watch', function (done) {
-    gulp.watch('src/**/*', ['scssmin', 'build-js', 'fileinclude'])
+    gulp.watch('src/**/*', ['scssmin', 'build-js', 'copy:images', 'fileinclude'])
         .on('end', done);
 });
 
@@ -139,4 +142,4 @@ gulp.task("build-js", ['fileinclude'], function(callback) {
 gulp.task('dist', ['clean:css', 'clean:js',  'fileinclude', 'md5:css', 'md5:js','connect','open']);
 
 //开发
-gulp.task('dev', ['connect', 'copy:images', 'fileinclude', 'scssmin', 'build-js', 'watch', 'open']);
+gulp.task('dev', ['copy:images', 'fileinclude', 'scssmin', 'build-js','connect', 'watch',  'open']);

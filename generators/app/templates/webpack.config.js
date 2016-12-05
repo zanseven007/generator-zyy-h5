@@ -13,12 +13,10 @@ function getEntry() {
     var matchs = [], files = {};
     dirs.forEach(function (item) {
         matchs = item.match(/(.+)\.js$/);
-        console.log(matchs);
         if (matchs) {
             files[matchs[1]] = path.resolve(srcDir, 'js', item);
         }
     });
-    console.log(JSON.stringify(files));
     return files;
 }
 
@@ -48,7 +46,7 @@ module.exports = {
     resolve: {
         alias: {
             jquery: srcDir + "/js/lib/jquery.min.js",
-            core: srcDir + "/js/core",
+            typed: srcDir + "/js/lib/typed.js",
             ui: srcDir + "/js/ui"
         }
     },

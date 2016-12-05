@@ -1,6 +1,7 @@
 a {
 	color: #333;
 	text-decoration: none;
+    -webkit-tap-highlight-color:transparent;
 }
 
 a:hover {
@@ -14,6 +15,10 @@ img {
      * 宽度或者设置 `max-width: none` 来覆盖 `max-width: 100%`
     */
     max-width: 100%;
+}
+html,body{
+    max-width: 650px;
+    margin:0 auto;
 }
 /**
  * .clearfix

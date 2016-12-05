@@ -1,11 +1,6 @@
 //通过webpack.config.js里配置alias引用jquery
 const $ = require('jquery');
-//通过reqiure文件的方式引用fullpage
-require('./lib/jquery.fullpage.js');
-//判断是否是移动端，然而对于H5并没有什么卵用
-const isMobile = /mobile|dxyapp/i.test(window.navigator.userAgent);
-
-
+let dxy_wechat_share = require('dxy-wechat-share');
 
 $(function($){
 	    //增加全局方法
@@ -18,37 +13,14 @@ $(function($){
 	    		});
 	    	}
 	    });
-	    
-	    $('#fullpage').fullpage({
-		    //Navigation
-	        afterLoad: function(anchorLink, index){
-	            if(index == 1){
-	                /*第一屏*/
-	                $('.section1__text').removeClass('o0').animateCss('tada');
-	                $('.section1__text').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	                    $('.section1__pic1,.section1__pic2,.section1__pic3,.section1__pic4,.section1__pic5').removeClass('o0').animateCss('fadeInZ');
-	                    $('.section1__person').removeClass('o0').animateCss('bounceInLeft');
-	                    $('.section1__person').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	                        $('.section1__arrow').removeClass('o0').animateCss('customFade');
-	                    });
-	                }); 
-	            }
-	            if(index == 2){
-	                /*第一屏*/
-	                $('.section2__btn1,.section2__btn2').removeClass('o0').animateCss('fadeInUp');
-	            }
-	        },
-	        onLeave: function(index, nextIndex, direction){
-	            if(index == 1){
-	                $('.section1__text,.section1__pic1,.section1__pic2,.section1__pic3,.section1__pic4,.section1__pic5,.section1__person,.section1__arrow').removeClass('o1').addClass('o0');
-	                $('.section1__arrow').removeClass('customFade');
-	            }
-	            if(index == 2){
-	                $('.section2__btn1,.section2__btn2').removeClass('o1').addClass('o0');
-	            }
-	        }        
-		});
-	    $('.section1__arrow').click(function(event) {
-	        $.fn.fullpage.moveTo(2);
+	    window.wx_share = 'https://sim.dxy.cn/japi/js/sign/77?callback=?';
+	    dxy_wechat_share({
+	      title:'这是一个分享标题',
+	      desc:'这是一个分享摘要',
+	      imgUrl:'这儿是一个分享图片地址',
+	      success:function(){
+	        console.log('这是一个分享成功回调函数');
+	      }
 	    });
+	    console.log('欢迎使用赞鱼鱼的H5脚手架');
 })
