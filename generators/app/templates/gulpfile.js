@@ -76,8 +76,7 @@ gulp.task('fileinclude', function (done) {
           basepath: '@file'
         }))
         .pipe(gulp.dest('dist/app'))
-        .on('end', done)
-        .pipe(connect.reload());
+        .on('end', done);
 
 });
 
