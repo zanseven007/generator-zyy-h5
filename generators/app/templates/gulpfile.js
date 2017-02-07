@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     base64 = require('gulp-css-base64'),
     webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.js'),
+    webpackConfigDev = require('./webpack.config.dev.js'),
+    webpackConfigPro = require('./webpack.config.pro.js'),
     connect = require('gulp-connect');
     sourcemaps = require('gulp-sourcemaps');
     
@@ -53,7 +54,7 @@ gulp.task('scssmin', function (done) {
 });
 
 //将js加上10位md5,并修改html中的引用路径，该动作依赖build-js
-gulp.task('md5:js', ['build-js'], function (done) {
+gulp.task('md5:js', ['build-js-pro'], function (done) {
     gulp.src('dist/js/*.js')
         .pipe(md5(10, 'dist/app/*.html'))
         .pipe(gulp.dest('dist/js'))
@@ -100,7 +101,7 @@ gulp.task('clean:js', function (done) {
         .on('end', done);
 });
 gulp.task('watch', function (done) {
-    gulp.watch('src/**/*', ['scssmin', 'build-js', 'copy:images', 'fileinclude'])
+    gulp.watch('src/**/*', ['scssmin', 'build-js-dev', 'copy:images', 'fileinclude'])
         .on('end', done);
 });
 
@@ -122,13 +123,28 @@ gulp.task('open', function (done) {
         .on('end', done);
 });
 
-var myDevConfig = Object.create(webpackConfig);
+var myDevConfig = Object.create(webpackConfigDev);
 
 var devCompiler = webpack(myDevConfig);
 
-//引用webpack对js进行操作
-gulp.task("build-js", ['fileinclude'], function(callback) {
+var myProConfig = Object.create(webpackConfigPro);
+
+var proCompiler = webpack(myProConfig);
+
+//引用webpack对js进行操作--dev
+gulp.task("build-js-dev", ['fileinclude'], function(callback) {
     devCompiler.run(function(err, stats) {
+        if(err) throw new gutil.PluginError("webpack:build-js", err);
+        gutil.log("[webpack:build-js]", stats.toString({
+            colors: true
+        }));
+        callback();
+    });
+});
+
+//引用webpack对js进行操作--pro
+gulp.task("build-js-pro", ['fileinclude'], function(callback) {
+    proCompiler.run(function(err, stats) {
         if(err) throw new gutil.PluginError("webpack:build-js", err);
         gutil.log("[webpack:build-js]", stats.toString({
             colors: true
@@ -141,4 +157,4 @@ gulp.task("build-js", ['fileinclude'], function(callback) {
 gulp.task('dist', ['clean:css', 'clean:js',  'fileinclude', 'md5:css', 'md5:js','connect','open']);
 
 //开发
-gulp.task('dev', ['copy:images', 'fileinclude', 'scssmin', 'build-js','connect', 'watch',  'open']);
+gulp.task('dev', ['copy:images', 'fileinclude', 'scssmin', 'build-js-dev','connect', 'watch',  'open']);
