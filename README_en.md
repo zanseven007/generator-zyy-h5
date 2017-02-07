@@ -22,7 +22,7 @@ Create a new project directory and enter
 ```
 mkdir my-new-h5 && cd $_
 ```
-Use the H5 template
+Use the H5 template,this command will automatically do `npm install`.
 
 ```
 yo zyy-h5
@@ -40,7 +40,7 @@ gulp dist
 
 ## ISSUE
 
-**node-sass installation failed Solution**: because the installation of `node-sass` when it github Releases are hosted in the file `s3.amazonaws.com` above, and this site is always in the country network is not Stable, so we use `cnpm install` or Taobao mirror to download this file.
+**node-sass installation failed Solution**: because the installation of `node-sass` when it github Releases are hosted in the file `s3.amazonaws.com` above, and this site is always in the country network is not Stable, so we use `cnpm` , `yarn` or Taobao mirror to download this file.
 
 Directly run the following command
 
