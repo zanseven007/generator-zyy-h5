@@ -1,6 +1,6 @@
 {
   "name": "generator-zyy-h5",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "description": "基于Webpack的H5项目目录快速生成器",
   "main": "./generators/app/index.js",
   "scripts": {
