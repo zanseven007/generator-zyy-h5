@@ -15,11 +15,11 @@ var gulp = require('gulp'),
     md5 = require('gulp-md5-plus'),
     fileinclude = require('gulp-file-include'),
     clean = require('gulp-clean'),
-    base64 = require('gulp-css-base64'),
+    cssBase64 = require('gulp-css-base64'),
     webpack = require('webpack'),
     webpackConfigDev = require('./webpack.config.dev.js'),
     webpackConfigPro = require('./webpack.config.pro.js'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
     sourcemaps = require('gulp-sourcemaps');
     
 var host = {
@@ -84,7 +84,7 @@ gulp.task('fileinclude', function (done) {
 //压缩css操作，应该先拷贝图片并压缩合并css
 gulp.task('build-css', ['copy:images', 'scssmin'], function (done) {
     gulp.src('dist/css/style.min.css')
-        .pipe(base64())
+        .pipe(cssBase64())
         .pipe(cssmin())
         .pipe(gulp.dest('dist/css'))
         .on('end', done);
