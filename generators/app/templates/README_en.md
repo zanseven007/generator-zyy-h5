@@ -2,7 +2,7 @@
 
 > - H5 is increasingly popular, in order to facilitate the development of future convenience, hereby write a template generator for future use
 > - The use of @@ include in HTML supports the introduction of an .inc file
-> - In the CSS file can be used to scss
+> - In the CSS file can be used to scss,and small picture will change to base64 data
 > - Js in the use of webpack merge the public module, you can have any entry file
 > - Development can automatically start the Chrome browser, and open the local 3000 port to debug
 
