@@ -38,7 +38,23 @@ var pkg = require('./package.json');
 gulp.task('copy:images', function (done) {
     gulp.src(['src/images/**/*']).pipe(gulp.dest('dist/images')).on('end', done);
 });
+//压缩html
+gulp.task('htmlmin', ['fileinclude'],function () {
+	var options = {
+		removeComments: true,//清除HTML注释
+		collapseWhitespace: true,//压缩HTML
+		collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
+		removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
+		removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
+		removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"
+		// minifyJS: true,//压缩页面JS
+		// minifyCSS: true//压缩页面CSS
+	};
+	gulp.src('dist/app/*.html')
+		.pipe(htmlmin(options))
+		.pipe(gulp.dest('dist/app'));
 
+});
 //压缩合并css, css中既有自己写的.less, 也有引入第三方库的.css
 gulp.task('scssmin', function (done) {
     gulp.src(['src/css/*.scss', 'src/css/*.css'])
@@ -154,7 +170,7 @@ gulp.task("build-js-pro", ['fileinclude'], function(callback) {
 });
 
 //发布
-gulp.task('dist', ['clean:css', 'clean:js',  'fileinclude', 'md5:css', 'md5:js','connect','open']);
+gulp.task('dist', ['clean:css', 'clean:js', 'htmlmin', 'md5:css', 'md5:js', 'connect', 'open']);
 
 //开发
-gulp.task('dev', ['copy:images', 'fileinclude', 'scssmin', 'build-js-dev','connect', 'watch',  'open']);
+gulp.task('dev', ['copy:images', 'htmlmin', 'scssmin', 'build-js-dev', 'connect', 'watch', 'open']);

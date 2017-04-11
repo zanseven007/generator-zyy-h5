@@ -28,9 +28,11 @@
     "gulp-util": "~2.2.9",
     "gulp-watch": "4.1.0",
     "node-sass": "^3.10.0",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "gulp-htmlmin": "^3.0.0"
   },
   "dependencies": {
     "dxy-wechat-share": "^1.0.2"
+     
   }
 }
