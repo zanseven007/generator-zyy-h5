@@ -55,7 +55,7 @@ gulp.task('htmlmin', ['fileinclude'],function () {
 		.pipe(gulp.dest('dist/app'));
 
 });
-//压缩合并css, css中既有自己写的.less, 也有引入第三方库的.css
+//压缩合并css, css中既有自己写的.scss, 也有引入第三方库的.css
 gulp.task('scssmin', function (done) {
     gulp.src(['src/css/*.scss', 'src/css/*.css'])
         .pipe(sourcemaps.init())
