@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer');
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
+    htmlmin = require('gulp-htmlmin'),
     md5 = require('gulp-md5-plus'),
     fileinclude = require('gulp-file-include'),
     clean = require('gulp-clean'),
