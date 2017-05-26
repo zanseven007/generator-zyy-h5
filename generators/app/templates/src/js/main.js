@@ -13,14 +13,5 @@ $(function($){
 	    		});
 	    	}
 	    });
-	    window.wx_share = 'https://sim.dxy.cn/japi/js/sign/77?callback=?';
-	    dxy_wechat_share({
-	      title:'这是一个分享标题',
-	      desc:'这是一个分享摘要',
-	      imgUrl:'这儿是一个分享图片地址',
-	      success:function(){
-	        console.log('这是一个分享成功回调函数');
-	      }
-	    });
 	    console.log('欢迎使用赞鱼鱼的H5脚手架');
 })
