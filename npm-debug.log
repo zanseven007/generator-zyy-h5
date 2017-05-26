@@ -1,0 +1,120 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--access-public' ]
+2 info using npm@3.10.9
+3 info using node@v5.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/zouchuan/github/generator-zyy-h5',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/zouchuan/.npm correctMkdir not in flight; initializing
+10 info lifecycle generator-zyy-h5@0.2.1~prepublish: generator-zyy-h5@0.2.1
+11 silly lifecycle generator-zyy-h5@0.2.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package.tgz',
+12 verbose tar pack   '/Users/zouchuan/github/generator-zyy-h5' ]
+13 verbose tarball /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package.tgz
+14 verbose folder /Users/zouchuan/github/generator-zyy-h5
+15 verbose addLocalTarball adding from inside cache /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package.tgz
+16 verbose correctMkdir /Users/zouchuan/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd generator-zyy-h5@0.2.1
+18 verbose afterAdd /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/zouchuan/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package/package.json written
+21 silly publish { name: 'generator-zyy-h5',
+21 silly publish   version: '0.2.1',
+21 silly publish   description: '基于Webpack的H5项目目录快速生成器',
+21 silly publish   main: './generators/app/index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/zanseven007/generator-zyy-h5.git' },
+21 silly publish   keywords: [ 'yeoman-generator', 'yeoman', 'H5', 'gulp', 'Webpack' ],
+21 silly publish   author:
+21 silly publish    { name: 'zanseven007',
+21 silly publish      email: '445897574@qq.com',
+21 silly publish      url: 'http://blogpage.js.org' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/zanseven007/generator-zyy-h5/issues' },
+21 silly publish   homepage: 'https://github.com/zanseven007/generator-zyy-h5#readme',
+21 silly publish   dependencies:
+21 silly publish    { chai: '^3.3.0',
+21 silly publish      chalk: '^1.1.1',
+21 silly publish      'fs-extra': '^0.24.0',
+21 silly publish      mocha: '^2.3.3',
+21 silly publish      'yeoman-generator': '^0.24.1',
+21 silly publish      yosay: '^1.0.5' },
+21 silly publish   readme: '# 基于webpack和gulp的H5小项目生成器\n\n[English docs](https://github.com/zanseven007/generator-zyy-h5/blob/master/README_en.md)\n\n\n> - H5 日益普及，为了方便日后开发的方便，特此写一个模板生成器为日后使用\n> - 在HTML中支持使用 @@include 引入一个 .inc 文件\n> - 在CSS文件中可以使用 scss 进行开发，发布时将小图片转换为base64格式\n> - 预置了一些动画库和常用的动画逻辑代码，方便写出丝滑的动画\n> - 在JS当中利用webpack合并了公共模块，可以有任意个入口文件,并区分生产和开发环境（开发环境不进行代码压缩，极大提高打包速度）\n> - 开发时可自动启动 Chrome 浏览器，并且打开本地3000端口来调试\n\n## 使用yoeman创建模板\n安装 yo\n\n```\n[sudo] npm install -g yo\n```\n安装H5模板生成器\n\n```\n[sudo] npm install -g generator-zyy-h5\n```\n新建一个项目目录并进入\n\n```\nmkdir my-new-h5 && cd $_\n```\n使用H5模板，这个命令会自动安装依赖(npm install)，建议终止掉，然后使用 `cnpm` 或 `yarn` 来安装，因为速度飞快。\n\n```\nyo zyy-h5\n```\n\n## 使用模板\n开发\n\n```\ngulp dev\n```\n发布(会压缩css和js，并增加md5)\n```\ngulp dist\n```\n\n## ISSUE\n\n**node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以推荐使用`cnpm`,`yarn`来安装我们的依赖，也可以通过淘宝镜像去下载这个文件。\n\n直接运行下面的命令即可\n\n```\nSASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass  && npm install gulp-sass\n```\n\n## License\nMIT © [zanseven007](https://github.com/zanseven007)\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'da85ca4b07c43ae37b2d409bb00f476283445860',
+21 silly publish   _id: 'generator-zyy-h5@0.2.1',
+21 silly publish   _shasum: '05bab153a29d69b5f89d330f91b4636f60ad5f5e',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name generator-zyy-h5
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'generator-zyy-h5',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'generator-zyy-h5',
+26 silly mapToRegistry   name: 'generator-zyy-h5',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/generator-zyy-h5
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/zouchuan/.npm/generator-zyy-h5/0.2.1/package.tgz
+30 verbose request uri https://registry.npmjs.org/generator-zyy-h5
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 14:31:09
+33 verbose request using bearer token for auth
+34 verbose request id 53de6190955a166b
+35 http request PUT https://registry.npmjs.org/generator-zyy-h5
+36 http 403 https://registry.npmjs.org/generator-zyy-h5
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Fri, 26 May 2017 06:31:11 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-nrt6135-NRT',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1495780271.611821,VS0,VE756',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/zouchuan/.npm/registry.npmjs.org/generator-zyy-h5 on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.2.1." : generator-zyy-h5
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:100:13)
+40 verbose stack     at Request.emit (events.js:185:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+40 verbose stack     at emitOne (events.js:90:13)
+40 verbose stack     at Request.emit (events.js:182:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+41 verbose statusCode 403
+42 verbose pkgid generator-zyy-h5
+43 verbose cwd /Users/zouchuan/github/generator-zyy-h5
+44 error Darwin 16.3.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish" "--access-public"
+46 error node v5.6.0
+47 error npm  v3.10.9
+48 error code E403
+49 error "You cannot publish over the previously published version 0.2.1." : generator-zyy-h5
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
