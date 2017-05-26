@@ -43,6 +43,11 @@ gulp dev
 gulp dist
 ```
 
+## 可选参数
+
+- `--html` 压缩 html 文件，发布线上需要时可以加上 `gulp dist --html`
+
+
 ## ISSUE
 
 **node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以推荐使用`cnpm`,`yarn`来安装我们的依赖，也可以通过淘宝镜像去下载这个文件。

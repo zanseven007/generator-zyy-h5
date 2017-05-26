@@ -38,6 +38,10 @@ Release (will compress the css and js, and increase md5)
 gulp dist
 ```
 
+## OPTIONS
+
+`--html` compress html file,if you want to do it, use `gulp dist --html`
+
 ## ISSUE
 
 **node-sass installation failed Solution**: because the installation of `node-sass` when it github Releases are hosted in the file `s3.amazonaws.com` above, and this site is always in the country network is not Stable, so we use `cnpm` , `yarn` or Taobao mirror to download this file.

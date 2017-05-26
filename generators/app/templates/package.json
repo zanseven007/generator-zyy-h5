@@ -1,6 +1,6 @@
 {
   "name": "Zanyuyu",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Wow, such a lovely package",
   "main": "dist/js/main.js",
   "scripts": {
