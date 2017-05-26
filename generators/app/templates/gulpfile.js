@@ -12,6 +12,8 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer');
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
+    gulpif = require('gulp-if'),
+    minimist = require('minimist'),
     htmlmin = require('gulp-htmlmin'),
     md5 = require('gulp-md5-plus'),
     fileinclude = require('gulp-file-include'),
@@ -29,6 +31,12 @@ var host = {
     html: 'index.html'
 };
 
+// node environment variable
+var knownOptions = {
+  default: { html: process.env.NODE_ENV || false }
+};
+var options = minimist(process.argv.slice(2), knownOptions);
+
 //mac chrome: "Google chrome", 
 var browser = os.platform() === 'linux' ? 'Google chrome' : (
   os.platform() === 'darwin' ? 'Google chrome' : (
@@ -41,7 +49,7 @@ gulp.task('copy:images', function (done) {
 });
 //压缩html
 gulp.task('htmlmin', ['fileinclude'],function () {
-	var options = {
+	var htmlOptions = {
 		removeComments: true,//清除HTML注释
 		collapseWhitespace: true,//压缩HTML
 		collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
@@ -52,7 +60,7 @@ gulp.task('htmlmin', ['fileinclude'],function () {
 		// minifyCSS: true//压缩页面CSS
 	};
 	gulp.src('dist/app/*.html')
-		.pipe(htmlmin(options))
+		.pipe(gulpif(options.html, htmlmin(htmlOptions)))
 		.pipe(gulp.dest('dist/app'));
 
 });

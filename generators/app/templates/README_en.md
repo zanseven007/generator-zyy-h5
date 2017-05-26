@@ -1,4 +1,4 @@
-# H5 Small Project Generator Based on Webpack and Gulp
+# H5 Small Project Generator Based on webpack and gulp
 
 > - H5 is increasingly popular, in order to facilitate the development of future convenience, hereby write a template generator for future use
 > - The use of @@ include in HTML supports the introduction of an .inc file
@@ -10,12 +10,12 @@
 install yo
 
 ```
-npm install -g yo
+[sudo] npm install -g yo
 ```
 install H5 template
 
 ```
-npm install -g generator-zyy-h5
+[sudo] npm install -g generator-zyy-h5
 ```
 Create a new project directory and enter
 

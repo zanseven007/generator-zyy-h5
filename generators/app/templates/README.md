@@ -1,4 +1,4 @@
-# 基于Webpack和Gulp的H5小项目生成器
+# 基于webpack和gulp的H5小项目生成器
 
 > - H5 日益普及，为了方便日后开发的方便，特此写一个模板生成器为日后使用
 > - 在HTML中支持使用 @@include 引入一个 .inc 文件
@@ -11,12 +11,12 @@
 安装 yo
 
 ```
-npm install -g yo
+[sudo] npm install -g yo
 ```
 安装H5模板生成器
 
 ```
-npm install -g generator-zyy-h5
+[sudo] npm install -g generator-zyy-h5
 ```
 新建一个项目目录并进入
 
