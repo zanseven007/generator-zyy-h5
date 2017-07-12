@@ -40,7 +40,7 @@ gulp dist
 
 ## OPTIONS
 
-`--html` compress html file,if you want to do it, use `gulp dist --html`
+`--html` compress html file,if you want to do it, use `gulp dist --html`
 
 ## ISSUE
 
