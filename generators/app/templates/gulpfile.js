@@ -8,8 +8,9 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
     gulpOpen = require('gulp-open'),
-    sass = require('gulp-sass');
-    prefix = require('gulp-autoprefixer');
+    sass = require('gulp-sass'),
+    prefix = require('gulp-autoprefixer'),
+    wait = require('gulp-wait'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
     gulpif = require('gulp-if'),
@@ -65,8 +66,10 @@ gulp.task('htmlmin', ['fileinclude'],function () {
 
 });
 //压缩合并css, css中既有自己写的.scss, 也有引入第三方库的.css
+// gulp-wait 加入避免出现找不到文件的错误
 gulp.task('scssmin', function (done) {
     gulp.src(['src/css/*.scss', 'src/css/*.css'])
+        .pipe(wait(300))
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
