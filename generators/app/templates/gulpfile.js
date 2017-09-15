@@ -82,16 +82,14 @@ gulp.task('scssmin', function (done) {
 gulp.task('md5:js', ['build-js-pro'], function (done) {
     gulp.src('dist/js/*.js')
         .pipe(md5(10, 'dist/app/*.html'))
-        .pipe(gulp.dest('dist/js'))
-        .on('end', done);
+        .pipe(gulp.dest('dist/js'));
 });
 
 //将css加上10位md5，并修改html中的引用路径，该动作依赖build-css
 gulp.task('md5:css', ['build-css'], function (done) {
     gulp.src('dist/css/*.css')
         .pipe(md5(10, 'dist/app/*.html'))
-        .pipe(gulp.dest('dist/css'))
-        .on('end', done);
+        .pipe(gulp.dest('dist/css'));
 });
 
 //用于在html文件中直接include文件
@@ -179,7 +177,7 @@ gulp.task("build-js-pro", ['fileinclude'], function(callback) {
 });
 
 //发布
-gulp.task('dist', ['clean:css', 'clean:js', 'htmlmin', 'md5:css', 'md5:js', 'connect', 'open']);
+gulp.task('dist', ['clean:css', 'clean:js', 'htmlmin', 'md5:css', 'md5:js']);
 
 //开发
 gulp.task('dev', ['copy:images', 'htmlmin', 'scssmin', 'build-js-dev', 'connect', 'watch', 'open']);
