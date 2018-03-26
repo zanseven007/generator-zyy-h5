@@ -45,7 +45,7 @@ gulp dist
 
 ## 可选参数
 
-- `--html` 压缩 html 文件，发布线上需要时可以加上 `gulp dist --html`
+- `--html` 压缩 html 文件，发布线上需要时可以加上 `gulp dist --html`
 
 
 ## ISSUE
